@@ -147,13 +147,14 @@ def SOTA():
         plt.plot(LSR_bpsp, LSR_D, label=f'Ours-{showed_methods[idx]}', linestyle='-', marker='o', alpha=0.9)
         color = plt.gca().lines[-1].get_color()
         plt.plot(base_bpsp, base_D, label=showed_methods[idx], linestyle='--', marker='x', color=color, alpha=0.9)
-    plt.legend(loc='best')
+    plt.legend(loc='best', fontsize=16)
     plt.xlabel('Bits per sub-pixel (bpsp)', fontsize=16)
     plt.ylabel('PSNR (dB)', fontsize=16)
     plt.xticks(fontsize=16) 
     plt.yticks(fontsize=16) 
     plt.grid(True, linestyle='--', linewidth=0.5, color='black', alpha=0.4)  
-    plt.savefig(f'SOTA_results/Average_RD_Curve_SOTA.png', dpi=300) 
+    plt.tight_layout()
+    plt.savefig(f'SOTA_results/Average_RD_Curve_SOTA.pdf', dpi=300) 
     plt.close()
 
 
